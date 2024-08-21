@@ -1,0 +1,190 @@
+<!-- Reservation Start -->
+<center>
+    <div class="container-fluid py-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
+       <div class="row g-0">
+           <div class="col-md-6">
+               <img src="{% static 'main/img/demo-imgs/appoinment-3.jpg' %}">
+           </div>
+           <div class="col-md-6 bg-dark d-flex align-items-center">
+               <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
+                   <h5 class="section-title ff-secondary text-start text-primary fw-normal"></h5>
+                   <h1 class="text-white mb-4">Make Appointment</h1>
+                   <form>
+                       <div class="row g-3">
+                           <div class="col-md-6">
+                               <div class="form-floating">
+                                   <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                   <label for="name">Your Name</label>
+                               </div>
+                           </div>
+   
+                           <div class="col-md-6">
+                               <div class="form-floating">
+                                   <input type="tel" class="form-control" id="number" placeholder="Phone Number">
+                                   <label for="number">Phone Number</label>
+                               </div>
+                           </div>
+   
+                           <div class="col-md-6">
+                               <div class="form-floating">
+                                   <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                   <label for="email">Your Email</label>
+                               </div>
+                           </div>
+                           <div class="col-md-6">
+                               <div class="form-floating date" id="date3" data-target-input="nearest">
+                                   <input type="date" class="form-control datetimepicker-input"
+                                       id="datetime" placeholder="Date & Time" data-target="#date3"
+                                       data-toggle="datetimepicker" />
+                                   <label for="datetime">Date & Time</label>
+                               </div>
+                           </div>
+   
+                           <div class="col-md-6">
+                               <div class="form-floating date" id="date3" data-target-input="nearest">
+                                   <input type="time" class="form-control datetimepicker-input"
+                                       id="datetime" placeholder="Date & Time" data-target="#date3"
+                                       data-toggle="datetimepicker" />
+                                   <label for="datetime">Date & Time</label>
+                               </div>
+                           </div>
+   
+   
+                           <div class="col-md-6">
+                               <div class="form-floating">
+                                   <select class="form-select" id="select3">
+                                       <option selected disabled>Select Address Type</option>
+                                       <option>Home</option>
+   
+                                       <option>Parlour</option>
+   
+                                          
+   
+   
+   
+                                   </select>
+                                   <label for="select3"></label>
+                               </div>
+                           </div>
+   
+                           
+   
+   
+                           <div class="col-md-6">
+                               <div class="form-floating">
+                                   <input type="text" class="form-control" id="name"
+                                       placeholder="Home Address(optional)">
+                                   <label for="name">Home Address(optional) </label>
+                               </div>
+                           </div>
+   
+                           
+                           <div class="col-md-6">
+                               <div class="form-floating">
+                                   <select class="form-select" name="parlour" id="select3">
+                                       <option selected disabled>Select Beauty Parlour</option>
+                                       {% for a in obj %}
+                                       <option value={{a.parlour_id}}>{{a.name}}</option>
+                                       {%endfor%}
+                                   </select>
+                                   <label for="select3"></label>
+                               </div>
+                           </div>
+                           
+                          
+   
+                                                  <!-- <div class="col-md-6">
+                               <div class="form-floating">
+                                   <select class="form-select" id="select3">
+                                       <option selected disabled>Select Services</option>
+                                       <option>Facial</option>
+                                       <option>Hair Services</option>
+                                       <option>Pedicure</option>
+                                       <option>Waxing</option>
+                                       <option>Make-Up</option>
+   
+   
+                                   </select>
+                                   <label for="select3"></label>
+                               </div>
+                           </div> -->
+   
+                           <div class="col-md-6">
+                               <div class="form-floating">
+                                   <select class="form-select" name="beautician" id="select3">
+                                       
+                                       <option selected disabled>Select beautician</option>
+                                       {% for b in demo %}
+                                       <option value={{b.parlour_id}}>{{b.beautician}}</option>
+                                       {% endfor %}
+                                       
+                                      
+                                     
+                                   </select>
+                                   <label for="select3"></label>
+                               </div>
+                           </div>
+   
+   
+   
+   
+                           <div class="col-md-6">
+                               <div class="form-floating">
+                                   <select class="form-select" name='member' id="select1">
+                                       <option selected disabled>No of Members</option>
+                                       <option value="1-2">1-2</option>
+                                       <option value="2-3">2-3</option>
+   
+                                      
+                                   </select>
+                                   <label for="select1"></label>
+                               </div>
+                           </div>
+                           
+                
+                           <div class="col-12">
+                               <div class="form-floating">
+                                   <textarea class="form-control" name='servise' placeholder="Name of Service" id="message" style="height: 80px"></textarea>
+                                   <label for="message">Name of Service</label>
+   
+                                   
+                                       <option value={{a.parlour_id}}>{{a.name}}</option>
+                                       
+                               </div>
+                           </div>
+                          
+                           <!-- <div class="col-12">
+           <div class="form-floating">
+               <textarea class="form-control" placeholder="Special Request" id="message"
+                   style="height: 100px"></textarea>
+               <label for="message">Special Request</label>
+           </div>
+       </div> -->
+                           <div class="col-12">
+                               <button class="btn btn-primary w-100 py-3" type="submit">Book Now Services</button>
+                           </div>
+                       </div>
+                   </form>
+               </div>
+           </div>
+       </div>
+   </div>
+   </div>
+   </center>
+   <!-- Appointment End -->
+          
+
+
+
+#   main views
+
+   def home(request):
+    parlours = ParlourModel.objects.filter(status='activated')
+    demo = ServicesModel.objects.all()
+    context = {
+        'obj': parlours,
+        'demo':demo
+    }
+    return render(request,'main/index.html', context=context)
+
+    #   main views
